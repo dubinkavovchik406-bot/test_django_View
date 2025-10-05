@@ -34,3 +34,14 @@ def author_list(request):
         "myapp/author_list.html",
         context=context
     )
+
+def get_author_by_id(request, author_id):
+    author = Author.objects.get(id=author_id)
+    context = {
+        "author": author
+    }
+    return render(
+        request,
+        "myapp/author_details.html",
+        context=context
+    )
