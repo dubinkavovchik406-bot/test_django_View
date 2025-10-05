@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Список авторів</title>
+</head>
+<body>
+<h2>
+	Автори
+</h2>
+<ul>
+	{% for author in authors_list %}
+	<li>
+		{{author.name}} - {{author.surname}}
+		<a href="{% url 'author_detail' author.id %}">Детальніше</a>
+	</li>
+	{% endfor %}
+</ul>
+</body>
+</html>
