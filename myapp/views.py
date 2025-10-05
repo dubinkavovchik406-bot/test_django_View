@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from myapp.models import Post
+from myapp.models import Post, Author
 
 # Create your views here.
 
@@ -21,5 +21,16 @@ def get_post_by_id(request, post_id):
     return render(
         request,
         "myapp/post_details.html",
+        context=context
+    )
+
+def author_list(request):
+    authors = Author.objects.all()
+    context = {
+        "authors_list": authors
+    }
+    return render(
+        request,
+        "myapp/author_list.html",
         context=context
     )
