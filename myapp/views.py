@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from myapp.models import Post, Author
 
 # Create your views here.
@@ -45,3 +46,6 @@ def get_author_by_id(request, author_id):
         "myapp/author_details.html",
         context=context
     )
+
+def test(request):
+    return HttpResponse("Це тестова заглушка.", status=200)
