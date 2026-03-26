@@ -1,1 +1,2 @@
-# test_django_View
+# UserApplicationDjangoProject
+## Simple project about user organization on django
